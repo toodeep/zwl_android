@@ -5,54 +5,90 @@
     <title>列车时刻表查询</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/jquery.mobile-1.4.3.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.4/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 
 <body>
 
 <div data-role="page" id="index">
 
-    <div data-role="header" data-position="fixed">
+    <div data-role="header" data-position="fixed" data-theme="b">
         <h1>列车时刻表查询</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#index" data-icon="grid" class="ui-btn-active" data-transition="slidefade">车站查询</a></li>
+                <li><a href="#byTrainCode" data-icon="star" data-transition="slidefade">车次查询</a></li>
+                <li><a href="#" data-icon="arrow-l" class="ui-btn ui-corner-all" data-rel="back">返回</a></li>
+            </ul>
+        </div>
     </div>
 
     <div role="main" class="ui-content">
         <div class="ui-field-contain">
             <label>发车站:</label>
-            <input type="text" name="text-basic" id="search-begin" value="">
+            <input type="text" name="text-basic" id="search-begin" value="" placeholder="请输入发车站">
         </div>
         <div class="ui-field-contain">
             <label>终点站:</label>
-            <input type="text" name="text-basic" id="search-end" value="">
-        </div>
-        <div class="ui-field-contain">
-            <label>车次:</label>
-            <input type="text" name="text-basic" id="search-no" value="">
+            <input type="text" name="text-basic" id="search-end" value="" placeholder="请输入终点站">
         </div>
         <input type="button" value="搜索" id="search-submit">
+
         <ul data-role="listview" data-inset="true" id="list">
+            <!-- <li><a href="#">
+                <h2>G1次</h2>
+                <p>第一站-第二站</p>
+                <p>用时</p>
+                <p class="ui-li-aside">4:40开</p>
+            </a></li> -->
         </ul>
     </div>
 
-    <div data-role="footer">
+</div>
+
+<div data-role="page" id="byTrainCode">
+    <div data-role="header" data-position="fixed" data-theme="b">
+        <h1>列车时刻表查询</h1>
         <div data-role="navbar">
             <ul>
-                <li><a href="#" data-icon="grid" class="ui-btn-active">查询</a></li>
-                <li><a href="#" data-icon="star">收藏</a></li>
-                <li><a href="#" data-icon="gear">设置</a></li>
+                <li><a href="#index" data-icon="grid" data-transition="slidefade">车站查询</a></li>
+                <li><a href="#byTrainCode" data-icon="star" class="ui-btn-active" data-transition="slidefade">车次查询</a></li>
+                <li><a href="#" data-icon="arrow-l" class="ui-btn ui-corner-all" data-rel="back">返回</a></li>
             </ul>
         </div>
     </div>
+    <div role="main" class="ui-content">
+        <div class="ui-field-contain">
+            <label>车次查询:</label>
+            <input type="text" name="text-basic" id="search-num" value="" placeholder="输入车次">
+        </div>
+        <div data-role="footer" style="text-align:center;">
+            <input type="button" value="车次列表" id="search-submit-bytraincode" data-inline="true" >
+            <input type="button" value="本车次明细" id="search-submit-detail" data-inline="true">
+        </div>
+
+        <ul data-role="listview" data-inset="true" id="list-bytraincode">
+            <!-- <li><a href="#">
+                <h2>G1次</h2>
+                <p>第一站-第二站</p>
+                <p>用时</p>
+                <p class="ui-li-aside">4:40开</p>
+            </a></li> -->
+        </ul>
+    </div>
+
 </div>
 
 <div data-role="page" id="detail">
 
-    <div data-role="header" data-position="fixed">
+    <div data-role="header" data-position="fixed" data-theme="b">
         <h1>列车时刻表查询</h1>
     </div>
 
     <div role="main" class="ui-content">
         <h2></h2>
-        <table data-role="table" id="movie-table" data-mode="reflow" class="ui-responsive">
+        <table  id="movie-table"  class="table table-striped table-bordered">
             <thead>
             <tr>
                 <th data-priority="1">站名</th>
@@ -63,22 +99,13 @@
             <tbody>
             </tbody>
         </table>
-        <a href="#" class="ui-btn ui-corner-all" data-rel="back">返回</a>
+        <a href="#" class="ui-btn ui-corner-all" data-rel="back" data-theme="b">返回</a>
     </div>
 
-    <div data-role="footer">
-        <div data-role="navbar">
-            <ul>
-                <li><a href="#" data-icon="grid" class="ui-btn-active">查询</a></li>
-                <li><a href="#" data-icon="star">收藏</a></li>
-                <li><a href="#" data-icon="gear">设置</a></li>
-            </ul>
-        </div>
-    </div>
 </div>
 
 <script src="js/jquery-1.11.1.js"></script>
 <script src="js/jquery.mobile-1.4.3.js"></script>
-
+<script src="js/index.js"></script>
 </body>
 </html>

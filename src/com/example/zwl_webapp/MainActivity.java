@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
         {            
             public void onProgressChanged(WebView view, int progress)     
             {              
-                activity.setTitle("小弟正在努力加载中...");         
+                activity.setTitle("created by zwl");         
                 activity.setProgress(progress * 100);       
                 if(progress == 100)              
                     activity.setTitle(R.string.app_name);         
